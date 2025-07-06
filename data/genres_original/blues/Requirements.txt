@@ -1,0 +1,21 @@
+pip install numpy pandas librosa soundfile matplotlib scikit-learn torch torchvision diffusers
+#data collection and preparation
+import os
+
+google_drive_data_path = '/content/data/genres_original'
+
+# Check if the 'Data' folder exists in Google Drive
+if os.path.exists(google_drive_data_path):
+    print(f"'{google_drive_data_path}' found.")
+    # List the contents of the 'Data' folder
+    data_contents = os.listdir(google_drive_data_path)
+    print(f"Contents of '{google_drive_data_path}': {data_contents}")
+
+    # Check if the contents look like genre folders
+    if data_contents and all(os.path.isdir(os.path.join(google_drive_data_path, item)) for item in data_contents):
+        print("The contents appear to be genre folders.")
+    else:
+        print("The contents do not appear to be genre folders or the folder is empty.")
+
+else:
+    print(f"'{google_drive_data_path}' not found. Please ensure the dataset is uploaded to this location in your Google Drive.")
