@@ -1,0 +1,17 @@
+pip install --upgrade openai
+import joblib
+from features import extract_features
+from mood import predict_mood
+from generate_art import gen
+
+clf = joblib.load('genre_clf.joblib')
+
+def infer(input_wav):
+    feat = extract_features('temp')  # tweak to handle single file
+    genre = clf.predict([feat])[0]
+    mood = predict_mood(input_wav)
+    gen(mood)
+    print(f"Genre: {genre}\nMood: {mood}\nArt saved at {mood}.png")
+
+if __name__=='__main__':
+    infer('your_humming.wav')
