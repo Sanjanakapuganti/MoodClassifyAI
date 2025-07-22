@@ -4,6 +4,9 @@ AI model that  infers mood from audio using ML &amp; librosa
 
 This project predicts the **genre** and **mood** of a given `.wav` audio file using machine learning and audio signal processing.
 
+<img width="866" height="661" alt="Screenshot 2025-07-07 015655" src="https://github.com/user-attachments/assets/ef452ca8-205c-4108-8237-6f6a1273559c" />
+
+
 ## 🔧 Technologies
 - Python + Scikit-learn
 - Librosa for audio feature extraction
